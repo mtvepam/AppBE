@@ -3,7 +3,7 @@ on:
   # Trigger analysis when pushing in master 
   push:
     branches:
-      - master
+      - main
 jobs:
   sonarcloud:
     runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
     - name: SonarCloud Scan
-      uses: mtvepam/beAPP@master
+      uses: mtvepam/beAPP@main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONARTOGITHUB }}
